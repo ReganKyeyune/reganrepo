@@ -1,0 +1,22 @@
+@Task
+def message():
+    msg = 'hello from prefect'
+    return(msg)
+
+#%%
+@flow
+def hello_world():
+    msg_ = 10
+    return(msg_)
+
+# %%
+@flow
+def wassup():
+    new_msg = message() + str(hello_world())
+    print(new_msg)
+
+if __name__ == '__main__':
+    wassup()
+    #serve(name = 'demo_deployment2'
+           #      ,cron = '52 16 * * *')
+# %%
